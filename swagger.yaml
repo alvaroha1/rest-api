@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: Resize Image API
+  description: Resize Image API.
+  version: 0.1.9
+servers:
+  - url: http://localhost:4005
+    description: Optional server description, e.g. Main (production) server
+paths:
+  /api/resize:
+    get:
+      summary: Resizes a picture.
+      parameters:
+        - in: query
+          name: url
+          schema:
+            type: string
+          allowReserved: true
+          description: The url of the picture to resize
+        - in: query
+          name: desiredWidth
+          schema:
+            type: integer
+          description: The desired width for the final picture
+        - in: query
+          name: desiredHeight
+          schema:
+            type: integer
+          description: The desired height for the final picture
+      description: Given a image url and a desired height and a desired width returns a resized picture.
+      responses:
+        '200':
+          description: A resized picture
+          content:
+            image/png
+        '400':
+          description: An internal error occurred
+          content:
+            application/json:
+              schema:
+                type: object
+                  properties:
+                    message:
+                      type: string
+                      example: "An invalid type"
+ 

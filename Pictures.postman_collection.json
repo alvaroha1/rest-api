@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "2785be7a-5c0b-4aa2-93ad-f428e5b6fb9e",
+		"name": "Pictures",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Resize Picture",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4005/api/resize?url=https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg&desiredWidth=160&desiredHeight=200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4005",
+					"path": [
+						"api",
+						"resize"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"
+						},
+						{
+							"key": "desiredWidth",
+							"value": "160"
+						},
+						{
+							"key": "desiredHeight",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
